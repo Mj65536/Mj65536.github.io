@@ -3,21 +3,21 @@ site_url: https://mj65536.github.io/
 
 theme:
   name: material
-  language: zh  # 设置界面语言为中文
+  language: zh
   palette:
-    # 浅色模式
+    # 浅色模式恢复为 teal (青色)
     - media: "(prefers-color-scheme: light)"
       scheme: default
-      primary: pink
-      accent: pink
+      primary: teal
+      accent: cyan
       toggle:
         icon: material/brightness-7
         name: 切换至深色模式
-    # 深色模式
+    # 深色模式恢复为 teal (青色)
     - media: "(prefers-color-scheme: dark)"
       scheme: slate
-      primary: pink
-      accent: pink
+      primary: teal
+      accent: cyan
       toggle:
         icon: material/brightness-4
         name: 切换至浅色模式
@@ -40,9 +40,6 @@ markdown_extensions:
   - pymdownx.tabbed:
       alternate_style: true
   - tables                         # 表格支持
-  
-extra_css:
-  - stylesheets/extra.css
 
 plugins:
   - search:
