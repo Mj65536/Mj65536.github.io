@@ -1,0 +1,6 @@
+:root {
+  /* 使用取色器实际捕捉到的颜色 */
+  --md-primary-fg-color:        #E92063 !important;
+  --md-primary-fg-color--light: #ff548e !important; /* 略微调亮 */
+  --md-primary-fg-color--dark:  #b2003c !important; /* 略微调暗 */
+}

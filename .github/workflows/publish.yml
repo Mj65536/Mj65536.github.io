@@ -1,0 +1,39 @@
+name: publish site
+on:
+  push:
+    branches:
+      - main
+permissions:
+  contents: read
+  pages: write      # 必须：允许部署到 Pages
+  id-token: write   # 必须：用于身份验证
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4.2.2
+
+      - name: Set up Python
+        uses: actions/setup-python@v5.3.0
+        with:
+          python-version: '3.x'
+
+      - name: Install dependencies
+        run: pip install mkdocs-material 
+
+      - name: Build Site
+        run: mkdocs build  # 仅编译，不推送到分支
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: site/      # MkDocs 默认生成的静态文件目录
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

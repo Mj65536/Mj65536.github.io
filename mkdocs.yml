@@ -1,0 +1,49 @@
+site_name: Mj65536 的技术日志
+site_url: https://mj65536.github.io/
+
+theme:
+  name: material
+  language: zh  # 设置界面语言为中文
+  palette:
+    # 浅色模式
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: pink
+      accent: pink
+      toggle:
+        icon: material/brightness-7
+        name: 切换至深色模式
+    # 深色模式
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: pink
+      accent: pink
+      toggle:
+        icon: material/brightness-4
+        name: 切换至浅色模式
+  features:
+    - navigation.tabs              # 顶部导航栏
+    - navigation.sections          # 侧边栏分级
+    - navigation.top               # 回到顶部按钮
+    - search.suggest               # 搜索建议
+    - search.highlight             # 搜索关键词高亮
+    - content.code.copy            # 代码块复制按钮
+
+markdown_extensions:
+  - pymdownx.highlight:            # 代码高亮
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+  - tables                         # 表格支持
+  
+extra_css:
+  - stylesheets/extra.css
+
+plugins:
+  - search:
+      lang: [en, ja]               # 增加 ja 或使用插件来完美支持中文搜索
